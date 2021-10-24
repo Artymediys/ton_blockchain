@@ -21,34 +21,34 @@ contract NFT_Phone {
         tvm.accept();
     }
 
-    function createPhone(string title, string color, uint year) public {
-        require(phoneTitleToID[title] == 0 && firstPhoneTitle != title, 102);
+    modifier acception() {
+        _;
         tvm.accept();
-        
+    }
+
+    function createPhone(string title, string color, uint year) public acception {
+        require(phoneTitleToID[title] == 0 && firstPhoneTitle != title, 102);
+
         if (phones.length == 0) { firstPhoneTitle = title; }
         phones.push(Phone(title, color, year));
         prices.push(0);
+        
         uint id = phones.length - 1;
         phoneTitleToID[title] = id;
         phoneToOwner[id] = msg.pubkey();
     }
 
-    function setPhonePrice(uint phoneID, uint price) public {
+    function setPhonePrice(uint phoneID, uint price) public acception {
         require(msg.pubkey() == phoneToOwner[phoneID], 103);
-        tvm.accept();
-
         prices[phoneID] = price;
     }
 
-    function getPhoneOwner(uint phoneID) public returns (uint) {
-        tvm.accept();
+    function getPhoneOwner(uint phoneID) public acception  returns (uint) {
         return phoneToOwner[phoneID];
     }
 
-    function getPhoneInfo(uint phoneID) public 
+    function getPhoneInfo(uint phoneID) public acception 
     returns (string phoneTitle, string phoneColor, uint phoneYear) {
-        tvm.accept();
-
         phoneTitle = phones[phoneID].title;
         phoneColor = phones[phoneID].color;
         phoneYear = phones[phoneID].year;
