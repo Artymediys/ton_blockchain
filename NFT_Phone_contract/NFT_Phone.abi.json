@@ -1,0 +1,67 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createPhone",
+			"inputs": [
+				{"name":"title","type":"string"},
+				{"name":"color","type":"string"},
+				{"name":"year","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setPhonePrice",
+			"inputs": [
+				{"name":"phoneID","type":"uint256"},
+				{"name":"price","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getPhoneOwner",
+			"inputs": [
+				{"name":"phoneID","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getPhoneInfo",
+			"inputs": [
+				{"name":"phoneID","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"phoneTitle","type":"string"},
+				{"name":"phoneColor","type":"string"},
+				{"name":"phoneYear","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"title","type":"string"},{"name":"color","type":"string"},{"name":"year","type":"uint256"}],"name":"phones","type":"tuple[]"},
+		{"name":"prices","type":"uint256[]"},
+		{"name":"firstPhoneTitle","type":"string"},
+		{"name":"phoneTitleToID","type":"optional(cell)"},
+		{"name":"phoneToOwner","type":"map(uint256,uint256)"}
+	]
+}
