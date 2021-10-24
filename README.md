@@ -1,1 +1,1 @@
-# TON Solidity Tasks
+# TON Solidity Contracts
