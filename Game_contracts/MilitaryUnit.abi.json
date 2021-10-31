@@ -1,0 +1,75 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "getDMG",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint8"}
+			]
+		},
+		{
+			"name": "setDMG",
+			"inputs": [
+				{"name":"damage","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "attack",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getHP",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint8"}
+			]
+		},
+		{
+			"name": "setHP",
+			"inputs": [
+				{"name":"hp","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "takeAttack",
+			"inputs": [
+				{"name":"damage","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_hp","type":"uint8"},
+		{"name":"dmg","type":"uint8"},
+		{"name":"unitAddr","type":"address"},
+		{"name":"baseStation","type":"address"}
+	]
+}
