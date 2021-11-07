@@ -43,8 +43,8 @@ fi
 
 function giver {
     $tos --url $NETWORK call \
-        --abi ../giver.abi.json \
-        --sign ../giver.keys.json \
+        --abi ./ProjectBasis/giver.abi.json \
+        --sign ./ProjectBasis/giver.keys.json \
         $GIVER_ADDRESS \
         sendTransaction "{\"dest\":\"$1\",\"value\":10000000000,\"bounce\":false}" \
         1>/dev/null
@@ -64,7 +64,7 @@ DEBOT_ADDRESS=$(get_address $DEBOT_NAME)
 
 echo "Step 2. Sending tokens to address: $DEBOT_ADDRESS"
 giver $DEBOT_ADDRESS
-DEBOT_ABI=$(cat $DEBOT_NAME.abi.json | xxd -ps -c 20000)
+DEBOT_ABI=$(cat $DEBOT_NAME.abi.json | xxd -p -c 20000)
 
 
 echo "Step 3. Deploying contract"
@@ -76,10 +76,9 @@ $tos --url $NETWORK call $DEBOT_ADDRESS setABI "{\"dabi\":\"$DEBOT_ABI\"}" \
     --sign $DEBOT_NAME.keys.json \
     --abi $DEBOT_NAME.abi.json 1>/dev/null
 
+contract_code=$(base64 -b 0 ShoppingList.tvc)
 
-debot_code=$(base64 -w 0 ShoppingList.tvc)
-
-$tos --url $NETWORK call $DEBOT_ADDRESS setShoppingListCode "{\"code\":\"$debot_code\"}" \
+$tos --url $NETWORK call $DEBOT_ADDRESS setShoppingListCode "{\"code\":\"$contract_code\"}" \
     --sign $DEBOT_NAME.keys.json \
     --abi $DEBOT_NAME.abi.json # 1>/dev/null
 

@@ -1,0 +1,17 @@
+Config: default
+Input arguments:
+     tvc: FillingSL_DeBot.tvc
+      wc: None
+    keys: FillingSL_DeBot.keys.json
+init_data: None
+is_update_tvc: None
+
+Seed phrase: "chunk coffee use reopen jungle profit power winter famous file fan subway"
+Raw address: 0:f01e65cf3d0d91c4eb8c63e433cc1ff62fbd6d37c83b3fe41d316ad9cd06f9eb
+testnet:
+Non-bounceable address (for init): 0QDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb562Wf
+Bounceable address (for later access): kQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb56zha
+mainnet:
+Non-bounceable address (for init): UQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb5694V
+Bounceable address (for later access): EQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb564PQ
+Succeeded

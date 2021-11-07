@@ -1,0 +1,17 @@
+Config: default
+Input arguments:
+     tvc: SL_DeBot.tvc
+      wc: None
+    keys: SL_DeBot.keys.json
+init_data: None
+is_update_tvc: None
+
+Seed phrase: "draft episode glance tank shove multiply between marine drastic mandate focus utility"
+Raw address: 0:9805571a96a2154ada1c26684251f58c50c82135e50272cc11130e2043e66fe3
+testnet:
+Non-bounceable address (for init): 0QCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv445w
+Bounceable address (for later access): kQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv49O1
+mainnet:
+Non-bounceable address (for init): UQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv4zX6
+Bounceable address (for later access): EQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv42g_
+Succeeded
