@@ -6,12 +6,12 @@ Input arguments:
 init_data: None
 is_update_tvc: None
 
-Seed phrase: "chunk coffee use reopen jungle profit power winter famous file fan subway"
-Raw address: 0:f01e65cf3d0d91c4eb8c63e433cc1ff62fbd6d37c83b3fe41d316ad9cd06f9eb
+Seed phrase: "relief opinion museum crash poverty race violin mom season until silly snack"
+Raw address: 0:2af42d075fc6092fed581c1ecc7b39961ad8f8e59ef8ad8009965021126bfef2
 testnet:
-Non-bounceable address (for init): 0QDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb562Wf
-Bounceable address (for later access): kQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb56zha
+Non-bounceable address (for init): 0QAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8tAW
+Bounceable address (for later access): kQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8o3T
 mainnet:
-Non-bounceable address (for init): UQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb5694V
-Bounceable address (for later access): EQDwHmXPPQ2RxOuMY-QzzB_2L71tN8g7P-QdMWrZzQb564PQ
+Non-bounceable address (for init): UQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8muc
+Bounceable address (for later access): EQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8jZZ
 Succeeded

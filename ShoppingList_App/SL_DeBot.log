@@ -6,12 +6,12 @@ Input arguments:
 init_data: None
 is_update_tvc: None
 
-Seed phrase: "draft episode glance tank shove multiply between marine drastic mandate focus utility"
-Raw address: 0:9805571a96a2154ada1c26684251f58c50c82135e50272cc11130e2043e66fe3
+Seed phrase: "cook seek grace betray bounce tennis update work gallery sort step voice"
+Raw address: 0:ca45fbaca999f0f1f56c05048897ad0566768fbc059982c671461319c1588214
 testnet:
-Non-bounceable address (for init): 0QCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv445w
-Bounceable address (for later access): kQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv49O1
+Non-bounceable address (for init): 0QDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFFwn
+Bounceable address (for later access): kQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFAHi
 mainnet:
-Non-bounceable address (for init): UQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv4zX6
-Bounceable address (for later access): EQCYBVcalqIVStocJmhCUfWMUMghNeUCcswREw4gQ-Zv42g_
+Non-bounceable address (for init): UQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFOet
+Bounceable address (for later access): EQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFLpo
 Succeeded
