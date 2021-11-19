@@ -1,4 +1,4 @@
-pragma ton-solidity >=0.35.0;
+pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
@@ -18,8 +18,11 @@ import "HasConstructorWithPubkey.sol";
 // SL - ShoppingList
 abstract contract SL_InitDeBot is Debot, Upgradable {
     TvmCell SL_Code;
+    TvmCell SL_Data;
+    TvmCell SL_StateInit;
+
     address SL_Address;
-    uint256 userPubKey;
+    uint userPubKey;
     address userWalletAddress;
     uint32 INITIAL_BALANCE = 200000000;
 
@@ -45,18 +48,21 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
         return [Terminal.ID, Menu.ID, AddressInput.ID, ConfirmInput.ID];
     }
 
-    function setShoppingListCode(TvmCell code) public {
+    function setShoppingListCode(TvmCell code, TvmCell data) public {
         require(msg.pubkey() == tvm.pubkey(), 101);
         tvm.accept();
+
         SL_Code = code;
+        SL_Data = data;
+        SL_StateInit = tvm.buildStateInit(SL_Code, SL_Data);
     }
 
-    function savePublicKey(string key) public {
-        (uint res, bool status) = stoi("0x" + key);
+    function savePublicKey(string pkey) public {
+        (uint res, bool status) = stoi("0x" + pkey);
         if (status) {
             userPubKey = res;
             Terminal.print(0, "Checking if you already have a shopping list ...");
-            TvmCell deployState = tvm.insertPubkey(SL_Code, userPubKey);
+            TvmCell deployState = tvm.insertPubkey(SL_StateInit, userPubKey);
             SL_Address = address.makeAddrStd(0, tvm.hash(deployState));
 
             Terminal.print(0, format("Info: your ShoppingList contract address is {}", SL_Address));
@@ -71,7 +77,7 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
     
     function checkStatus(int8 acc_type) public {
         if (acc_type == 1) {
-            Terminal.print(0, "Contract is already deployed");
+            _getSummary(tvm.functionId(setSummary));
         } else if (acc_type == -1) {
             Terminal.print(0, "You don't have a shopping list yet, so a new contract with an initial balance of 0.2 tokens will be deployed");
             AddressInput.get(tvm.functionId(creditAccount), "Select a wallet for payment. We will ask you to sign two transactions");
@@ -86,13 +92,14 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
 
     function creditAccount(address value) public {
         userWalletAddress = value;
+        optional(uint256) pubkey;
         TvmCell empty;
 
         Transactable(userWalletAddress).sendTransaction {
             abiVer: 2,
             extMsg: true,
             sign: true,
-            pubkey: 0,
+            pubkey: pubkey,
             time: uint64(now),
             expire: 0,
             callbackId: tvm.functionId(waitBeforeDeploy),
@@ -113,7 +120,9 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
     }
 
     function deploy() private view {
-        TvmCell image = tvm.insertPubkey(SL_Code, userPubKey);
+        TvmCell image = tvm.insertPubkey(SL_StateInit, userPubKey);
+        optional(uint256) none;
+
         TvmCell deployMsg = tvm.buildExtMsg({
             abiVer: 2,
             dest: SL_Address,
@@ -122,7 +131,7 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
             time: 0,
             expire: 0,
             sign: true,
-            pubkey: 0,
+            pubkey: none,
             stateInit: image,           
             call: {HasConstructorWithPubkey,  userPubKey}
         });
@@ -131,14 +140,16 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
 
     function setSummary(PurchaseSummary summary)  public {
         purshSumm = summary;
+        _menu();
     }
 
     function _getSummary(uint32 answerId) private view {
+        optional(uint256) none;
         ShoppingListInterface(SL_Address).getPurchaseSummary{
             abiVer: 2,
             extMsg: true,
             sign: false,
-            pubkey: 0,
+            pubkey: none,
             time: uint64(now),
             expire: 0,
             callbackId: answerId,
@@ -161,4 +172,6 @@ abstract contract SL_InitDeBot is Debot, Upgradable {
     function onCodeUpgrade() internal override {
         tvm.resetStorage();
     }
+
+    function _menu() internal virtual;
 }

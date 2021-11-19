@@ -94,7 +94,8 @@
 		{
 			"name": "setShoppingListCode",
 			"inputs": [
-				{"name":"code","type":"cell"}
+				{"name":"code","type":"cell"},
+				{"name":"data","type":"cell"}
 			],
 			"outputs": [
 			]
@@ -102,7 +103,7 @@
 		{
 			"name": "savePublicKey",
 			"inputs": [
-				{"name":"key","type":"bytes"}
+				{"name":"pkey","type":"bytes"}
 			],
 			"outputs": [
 			]

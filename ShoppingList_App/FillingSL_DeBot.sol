@@ -12,7 +12,7 @@ contract FillingSL_DeBot is SL_InitDeBot {
         Terminal.input(tvm.functionId(savePublicKey), "Please enter your public key", false);
     }
 
-    function _menu() private {
+    function _menu() internal override {
         ShoppingListInterface shoppingList = ShoppingListInterface(SL_Address);
         
         string sep = '----------------------------------------';
@@ -58,11 +58,12 @@ contract FillingSL_DeBot is SL_InitDeBot {
 
     function showPurchases(uint index) public {
         index = index;
+        optional(uint256) pubkey;
         ShoppingListInterface(SL_Address).getShoppingList{
             abiVer: 2,
             extMsg: true,
             sign: false,
-            pubkey: 0,
+            pubkey: pubkey,
             time: uint64(now),
             expire: 0,
             callbackId: tvm.functionId(showPurchases_),

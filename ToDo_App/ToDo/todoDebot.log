@@ -1,0 +1,17 @@
+Config: default
+Input arguments:
+     tvc: todoDebot.tvc
+      wc: None
+    keys: todoDebot.keys.json
+init_data: None
+is_update_tvc: None
+
+Seed phrase: "captain copper treat legal identify enroll impose matrix vast country voice subject"
+Raw address: 0:ff7f1a1cc2a9d70770a5eb03389e9a27fcef7025fd0d020bf7d9254e437390cd
+testnet:
+Non-bounceable address (for init): 0QD_fxocwqnXB3Cl6wM4npon_O9wJf0NAgv32SVOQ3OQzccS
+Bounceable address (for later access): kQD_fxocwqnXB3Cl6wM4npon_O9wJf0NAgv32SVOQ3OQzZrX
+mainnet:
+Non-bounceable address (for init): UQD_fxocwqnXB3Cl6wM4npon_O9wJf0NAgv32SVOQ3OQzXyY
+Bounceable address (for later access): EQD_fxocwqnXB3Cl6wM4npon_O9wJf0NAgv32SVOQ3OQzSFd
+Succeeded

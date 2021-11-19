@@ -6,12 +6,12 @@ Input arguments:
 init_data: None
 is_update_tvc: None
 
-Seed phrase: "relief opinion museum crash poverty race violin mom season until silly snack"
-Raw address: 0:2af42d075fc6092fed581c1ecc7b39961ad8f8e59ef8ad8009965021126bfef2
+Seed phrase: "project nose pumpkin diet apology used prepare cube cruel machine choose amused"
+Raw address: 0:539bd23838040bb0bf6d4a88dab9c4961a838fa3a412ddb51cd63e12869bc12e
 testnet:
-Non-bounceable address (for init): 0QAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8tAW
-Bounceable address (for later access): kQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8o3T
+Non-bounceable address (for init): 0QBTm9I4OAQLsL9tSojaucSWGoOPo6QS3bUc1j4ShpvBLjcS
+Bounceable address (for later access): kQBTm9I4OAQLsL9tSojaucSWGoOPo6QS3bUc1j4ShpvBLmrX
 mainnet:
-Non-bounceable address (for init): UQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8muc
-Bounceable address (for later access): EQAq9C0HX8YJL-1YHB7MezmWGtj45Z74rYAJllAhEmv-8jZZ
+Non-bounceable address (for init): UQBTm9I4OAQLsL9tSojaucSWGoOPo6QS3bUc1j4ShpvBLoyY
+Bounceable address (for later access): EQBTm9I4OAQLsL9tSojaucSWGoOPo6QS3bUc1j4ShpvBLtFd
 Succeeded
