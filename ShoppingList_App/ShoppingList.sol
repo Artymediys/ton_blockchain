@@ -44,7 +44,7 @@ contract ShoppingList is ShoppingListInterface, HasConstructorWithPubkey {
         purchases.push(newPurchase);
     }
 
-    function removePurchase(uint256 id) external override onlyOwner {
+    function removePurchase(uint id) external override onlyOwner {
         tvm.accept();
         for (uint256 i = 0; i < purchases.length; i++) {
             if (i == id) {
@@ -54,11 +54,13 @@ contract ShoppingList is ShoppingListInterface, HasConstructorWithPubkey {
         }
     }
 
-    function buy(uint256 id, uint256 price) external override onlyOwner {
+    function buy(uint id, uint price) external override onlyOwner {
         require(!purchases[id].isBought, 201);
         tvm.accept();
+        
         purchases[id].isBought = true;
         purchases[id].price = price;
+
         summary.countOfPaid++;
         summary.countOfNotPaid = purchases.length - summary.countOfPaid;
         summary.paidPrice += price; 

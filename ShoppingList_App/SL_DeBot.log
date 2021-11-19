@@ -6,12 +6,12 @@ Input arguments:
 init_data: None
 is_update_tvc: None
 
-Seed phrase: "cook seek grace betray bounce tennis update work gallery sort step voice"
-Raw address: 0:ca45fbaca999f0f1f56c05048897ad0566768fbc059982c671461319c1588214
+Seed phrase: "employ manage coast split craft hidden smile zoo enough inside place noble"
+Raw address: 0:c4f2d7a374fe90785a8363059b7870849a6db7eb7846922b6a029ee9bc81fb6a
 testnet:
-Non-bounceable address (for init): 0QDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFFwn
-Bounceable address (for later access): kQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFAHi
+Non-bounceable address (for init): 0QDE8tejdP6QeFqDYwWbeHCEmm2363hGkitqAp7pvIH7atOd
+Bounceable address (for later access): kQDE8tejdP6QeFqDYwWbeHCEmm2363hGkitqAp7pvIH7ao5Y
 mainnet:
-Non-bounceable address (for init): UQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFOet
-Bounceable address (for later access): EQDKRfusqZnw8fVsBQSIl60FZnaPvAWZgsZxRhMZwViCFLpo
+Non-bounceable address (for init): UQDE8tejdP6QeFqDYwWbeHCEmm2363hGkitqAp7pvIH7amgX
+Bounceable address (for later access): EQDE8tejdP6QeFqDYwWbeHCEmm2363hGkitqAp7pvIH7ajXS
 Succeeded
